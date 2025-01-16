@@ -7,6 +7,17 @@ WHERE year >= 1960
 GROUP BY year
 ORDER BY MAX(wins) DESC;
 
+SELECT year
+FROM (
+    SELECT year, name, MAX(wins)
+    FROM teams
+    WHERE year >= 1960
+    GROUP BY year
+    ORDER BY MAX(wins) DESC;
+)
+
+Issue may be 2 teams having a max number of wins as 116-- it gets collapsed down, so we are missing data.
+
 -- Expected result: 61 rows, starting with
 --
 -- +------+-------------------------------+-----------+
