@@ -11,6 +11,7 @@ WHERE teams.year = 2019
 GROUP BY teams.name;
 
 -- more accurate below, using "AS" function to rename things.
+-- https://entr451.com/sql-lab-4-answer/
 
 SELECT teams.name, players.first_name, players.last_name, stats.home_runs
 FROM (
